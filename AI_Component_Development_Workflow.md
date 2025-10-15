@@ -135,7 +135,7 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 #### 1. Product Requirements Document (PRD)
 **Purpose**: Define MVP scope and boundaries.
 
-**Location**: `/docs/PRD_template.md`
+**Location**: `/Planning_Docs/PRD_template.md`
 
 **Contents**:
 - MVP scope definition
@@ -152,7 +152,7 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 #### 2. Implementation Plan
 **Purpose**: Orchestrate component build order and integration strategy.
 
-**Location**: `/docs/Implementation_Plan_template.md`
+**Location**: `/Planning_Docs/Implementation_Plan_template.md`
 
 **Contents**:
 ```markdown
@@ -209,7 +209,7 @@ Test all Build Order 1-2 connections before proceeding.
 #### 3. Schema Document
 **Purpose**: Provide explicit data structure examples to prevent hallucination.
 
-**Location**: `/project_docs/Schema_template.md`
+**Location**: `/Dev_Docs/Schema_template.md`
 
 **Contents**:
 - Database schemas with field types
@@ -237,7 +237,7 @@ Test all Build Order 1-2 connections before proceeding.
 #### 4. Naming Standards
 **Purpose**: Ensure consistent naming to prevent semantic duplication.
 
-**Location**: `/project_docs/Naming_Standards_template.md`
+**Location**: `/Dev_Docs/Naming_Standards_template.md`
 
 **Contents**:
 ```markdown
@@ -270,7 +270,7 @@ Test all Build Order 1-2 connections before proceeding.
 #### 5. Function Registry
 **Purpose**: Track all functions with location and import to prevent duplication.
 
-**Location**: `/project_docs/Function_Registry_template.md`
+**Location**: `/Dev_Docs/Function_Registry_template.md`
 
 **Format** (one line per function):
 ```
@@ -302,7 +302,7 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 #### 6. API Contract (Optional)
 **Purpose**: Define API integration patterns.
 
-**Location**: `/project_docs/API_Contract_template.md`
+**Location**: `/Dev_Docs/API_Contract_template.md`
 
 **Contents**:
 - Endpoint definitions
@@ -320,7 +320,7 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 #### 7. Component Registry
 **Purpose**: Track implementation status and file metrics.
 
-**Location**: `/project_docs/Component_Registry_template.md`
+**Location**: `/Dev_Docs/Component_Registry_template.md`
 
 **Format**:
 ```markdown
