@@ -129,7 +129,7 @@ Registry status to VALIDATED."
 
 #### C. Decision Point
 - ✅ **Component works?** → Proceed to next component
-- ❌ **Component broken?** → Rollback via Kilo checkpoint, revise prompt
+- ❌ **Component broken?** → Debug issue, or rollback via Kilo checkpoint, revise prompt
 
 ---
 
