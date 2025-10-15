@@ -5,6 +5,34 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 
 ---
 
+## What Is a Component?
+
+**A component is a complete feature, not necessarily a single file.**
+
+### Complexity Determines Decomposition
+
+**Simple Component:**
+- Single file (e.g., `config_loader.py`)
+- One Kilo prompt
+- One testable outcome: "Config loads from JSON file"
+
+**Complex Component:**
+- Multiple files (e.g., "Download Model from Hugging Face"):
+  - `hugging_face_api.py` - API integration
+  - `download_manager.py` - Download handling
+  - `model_storage.py` - File organization
+  - `progress_tracker.py` - Progress reporting
+- Multiple Kilo prompts (decomposed implementation):
+  - Prompt 1: Implement API authentication → Test: authenticates successfully
+  - Prompt 2: Fetch model metadata → Test: retrieves model info
+  - Prompt 3: Download with progress → Test: downloads with real-time progress
+  - Prompt 4: Save to directory → Test: model saved to correct location
+- Component validated when all pieces work together end-to-end
+
+**Key Principle:** Component = feature boundary, not file count. Decomposition scales with complexity.
+
+---
+
 ## Two-Tier AI Development Architecture
 
 ### Planning Tier (You + AI Assistant)
@@ -32,15 +60,14 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 
 **Activities**:
 1. Create Product Requirements Document (PRD)
-2. Create Schema Document with examples
-3. Create Naming Standards document
-4. Create Function Registry with planned functions
-5. Create API Contract (if applicable)
-6. Create Implementation Plan with build order
+2. Create Implementation Plan with build order
+3. Create Schema Document with examples
+4. Create Naming Standards document
+5. Create Function Registry with planned functions
+6. Create API Contract (if applicable)
 7. Initialize Component Registry
 
-
-**Output**: Complete planning documentation set that prevents hallucination and scope creep. "It's better to refactor the plan, then refactor the codebase mid-dev."
+**Output**: Complete planning documentation set that prevents hallucination and scope creep.
 
 ---
 
@@ -49,17 +76,18 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 
 **Activities**:
 1. Consult Implementation Plan for next component in build order
-2. You and AI Assistant create Kilo prompt including:
+2. You and AI Assistant create Kilo prompt(s) including:
    - Component specification from PRD
    - Links to Schema Document
    - Links to Naming Standards
    - Current Function Registry
    - Explicit file structure and line limits
    - Exact runtime commands (e.g., "npm run dev")
-3. Kilo architect mode creates implementation plan
-4. Review and approve plan with AI Assistant
-5. Kilo implements component
-6. Kilo updates Component Registry and Function Registry
+3. For complex components: Create multiple atomic prompts, each with measurable outcome
+4. Kilo architect mode creates implementation plan
+5. Review and approve plan with AI Assistant
+6. Kilo implements component (may require multiple prompts)
+7. Kilo updates Component Registry and Function Registry
 
 **Output**: Implemented component with updated registries.
 
@@ -107,6 +135,8 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 #### 1. Product Requirements Document (PRD)
 **Purpose**: Define MVP scope and boundaries.
 
+**Location**: `/docs/PRD_template.md`
+
 **Contents**:
 - MVP scope definition
 - Component list with clear boundaries
@@ -122,6 +152,8 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 #### 2. Implementation Plan
 **Purpose**: Orchestrate component build order and integration strategy.
 
+**Location**: `/docs/Implementation_Plan_template.md`
+
 **Contents**:
 ```markdown
 # Implementation Plan
@@ -134,12 +166,14 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 - Files: database.py (~100 lines)
 - Dependencies: None
 - Integration: Used by all data components
+- Complexity: Simple (1 prompt)
 
 ### Configuration Manager Component
 - Functions: loadConfig(), getConfig(), saveConfig()
 - Files: config.py (~80 lines)
 - Dependencies: None
 - Integration: Used by all components
+- Complexity: Simple (1 prompt)
 
 ## Build Order 2: Authentication Layer
 **Depends on: Build Order 1**
@@ -149,6 +183,7 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 - Files: auth_module.py (~150 lines), auth_utils.py (~60 lines)
 - Dependencies: Database Connection, Configuration Manager
 - Integration: Used by User Profile, Session Manager
+- Complexity: Moderate (2-3 prompts)
 
 ## Integration Checkpoint 1
 Test all Build Order 1-2 connections before proceeding.
@@ -163,6 +198,7 @@ Test all Build Order 1-2 connections before proceeding.
 - Identifies integration test points
 - Provides visual dependency graph
 - Guides prompt sequencing
+- Shows expected complexity per component
 
 **Never provided to Kilo** - Used by you and AI Assistant to maintain development direction.
 
@@ -172,6 +208,8 @@ Test all Build Order 1-2 connections before proceeding.
 
 #### 3. Schema Document
 **Purpose**: Provide explicit data structure examples to prevent hallucination.
+
+**Location**: `/project_docs/Schema_template.md`
 
 **Contents**:
 - Database schemas with field types
@@ -198,6 +236,8 @@ Test all Build Order 1-2 connections before proceeding.
 
 #### 4. Naming Standards
 **Purpose**: Ensure consistent naming to prevent semantic duplication.
+
+**Location**: `/project_docs/Naming_Standards_template.md`
 
 **Contents**:
 ```markdown
@@ -230,6 +270,8 @@ Test all Build Order 1-2 connections before proceeding.
 #### 5. Function Registry
 **Purpose**: Track all functions with location and import to prevent duplication.
 
+**Location**: `/project_docs/Function_Registry_template.md`
+
 **Format** (one line per function):
 ```
 functionName(params) -> returnType | filepath.py | import {functionName} from './filepath'
@@ -260,6 +302,8 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 #### 6. API Contract (Optional)
 **Purpose**: Define API integration patterns.
 
+**Location**: `/project_docs/API_Contract_template.md`
+
 **Contents**:
 - Endpoint definitions
 - Authentication requirements
@@ -276,6 +320,8 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 #### 7. Component Registry
 **Purpose**: Track implementation status and file metrics.
 
+**Location**: `/project_docs/Component_Registry_template.md`
+
 **Format**:
 ```markdown
 # Component Registry
@@ -283,6 +329,8 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 ## User Authentication Component
 **Status**: VALIDATED  
 **Build Order**: 2  
+**Complexity**: Moderate (3 prompts)
+
 **Files**:
 - auth_module.py (148 lines) - Core logic
 - auth_utils.py (62 lines) - Helper functions
@@ -302,6 +350,8 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 ## User Profile Component
 **Status**: IN PROGRESS  
 **Build Order**: 3  
+**Complexity**: Complex (5 prompts)
+
 **Files**:
 - profile.py (estimating 180 lines)
 
@@ -361,6 +411,15 @@ sanitizeInput(input) -> str | auth_utils.py | import {sanitizeInput} from './aut
 - **Only mark components VALIDATED after manual verification**
 
 **Why**: Addresses Issue #3 (Fake test success from hardcoded responses).
+
+---
+
+### 5. Atomic Prompting for Complex Components
+- **Break complex components into multiple prompts**
+- **Each prompt has one measurable, testable outcome**
+- **Test each outcome before proceeding to next prompt**
+
+**Why**: Prevents overwhelming Kilo's context and enables precise validation.
 
 ---
 
@@ -426,6 +485,11 @@ Execute immediate rollback via Kilo checkpoints if:
 ## Context
 Building [Component Name] as part of Build Order [X].
 This component [brief purpose statement].
+Complexity: [Simple/Moderate/Complex] ([estimated number] prompts)
+
+## This Prompt Scope
+[If component needs multiple prompts, specify what THIS prompt covers]
+Expected outcome: [Specific testable result]
 
 ## Dependencies
 This component depends on:
@@ -439,7 +503,7 @@ This component depends on:
 
 ## Implementation Requirements
 
-### Files to Create
+### Files to Create/Modify
 - [filename.py] (~[estimated lines]) - [purpose]
 - [filename_utils.py] (~[estimated lines]) - [purpose]
 
@@ -458,6 +522,7 @@ Utils:
 
 ### Testing
 Run `[exact command]` to test component functionality.
+Expected result: [Specific observable outcome]
 
 ## Update Requirements
 After implementation:
@@ -519,7 +584,8 @@ Please create an implementation plan following these requirements.
 ### Per-Component Workflow
 - [ ] Consult Implementation Plan for next component
 - [ ] Verify dependencies are VALIDATED
-- [ ] Create Kilo prompt with embedded documentation
+- [ ] Determine if component needs decomposition (multiple prompts)
+- [ ] Create Kilo prompt(s) with embedded documentation
 - [ ] Review Kilo's architect plan with AI Assistant
 - [ ] Approve and execute implementation
 - [ ] Review Component Registry updates
