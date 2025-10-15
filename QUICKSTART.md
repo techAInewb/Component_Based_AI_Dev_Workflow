@@ -229,7 +229,7 @@ You're on the right track if:
 1. **Archive your docs** - Save filled templates as reference
 2. **Document lessons learned** - What worked? What didn't?
 3. **Refine prompts** - Save successful Kilo prompts as templates
-4. **Update workflow** - Found a better way? Document it
+4. **Update workflow** - Found a better way? Document and share it
 5. **Share experience** - Open an issue or PR with improvements
 
 ---
