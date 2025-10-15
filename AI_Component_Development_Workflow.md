@@ -32,14 +32,15 @@ This workflow is designed for solo developers or small teams using a two-tier AI
 
 **Activities**:
 1. Create Product Requirements Document (PRD)
-2. Create Implementation Plan with build order
-3. Create Schema Document with examples
-4. Create Naming Standards document
-5. Create Function Registry with planned functions
-6. Create API Contract (if applicable)
+2. Create Schema Document with examples
+3. Create Naming Standards document
+4. Create Function Registry with planned functions
+5. Create API Contract (if applicable)
+6. Create Implementation Plan with build order
 7. Initialize Component Registry
 
-**Output**: Complete planning documentation set that prevents hallucination and scope creep.
+
+**Output**: Complete planning documentation set that prevents hallucination and scope creep. "It's better to refactor the plan, then refactor the codebase mid-dev."
 
 ---
 
