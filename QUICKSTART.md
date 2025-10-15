@@ -99,7 +99,7 @@ Your prompt should include:
 
 #### B. Run Kilo Architect Mode
 1. Paste prompt into Kilo
-2. Use architect mode to generate implementation plan
+2. Use architect mode to generate implementation ToDo list.
 3. Review plan with your AI assistant
 4. Approve and execute
 
