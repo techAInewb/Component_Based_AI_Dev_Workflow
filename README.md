@@ -51,11 +51,11 @@ All templates are minimal markdown scaffolds that provide structure without cons
 2. **Implementation_Plan_template.md** - Build order and dependency tracking
 
 **Execution Documents** (in `/Dev_Docs/` - provided to Kilo):
-3. **Schema_template.md** - Data structure examples
-4. **Naming_Standards_template.md** - Consistent naming conventions (pre-filled)
-5. **Function_Registry_template.md** - Prevent function duplication
-6. **Component_Registry_template.md** - Track component status and metrics
-7. **API_Contract_template.md** - API specification (optional, use if needed)
+1. **Schema_template.md** - Data structure examples
+2. **Naming_Standards_template.md** - Consistent naming conventions (pre-filled)
+3. **Function_Registry_template.md** - Prevent function duplication
+4. **Component_Registry_template.md** - Track component status and metrics
+5. **API_Contract_template.md** - API specification (optional, use if needed)
 
 ---
 
