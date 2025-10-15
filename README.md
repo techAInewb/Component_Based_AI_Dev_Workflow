@@ -107,7 +107,7 @@ Templates provide **structure, not content**. Markdown headings create semantic 
 
 ## 🤝 Contributing
 
-This workflow emerged from tracking 49+ function duplication errors across multiple MVP development cycles. It represents real-world lessons learned.
+This workflow emerged from tracking 149+ AI implementation and coding errors across multiple successful MVP development cycles. It represents real-world lessons learned to the development of complex desktop applications.
 
 **Contributions welcome for:**
 - Additional failure modes and solutions
@@ -121,7 +121,7 @@ MIT License - Use freely, modify as needed, share improvements.
 
 ## 🙏 Credits
 
-Developed through iterative refinement with AI assistants (Claude, Perplexity) as thought partners. Special recognition to the autistic pattern recognition that made tracking 49 duplication errors possible.
+Developed by Ryan Connelly through iterative refinement with AI assistants as thought partners.
 
 ## 🔗 Related Resources
 
