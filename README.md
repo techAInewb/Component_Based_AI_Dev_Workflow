@@ -46,11 +46,11 @@ This repository provides a battle-tested workflow for component-based developmen
 ### Project Templates (7 Documents)
 All templates are minimal markdown scaffolds that provide structure without constraint:
 
-**Planning Documents** (in `/docs/` - for you + AI Assistant):
+**Planning Documents** (in `/Planning_Docs/` - for you + AI Assistant):
 1. **PRD_template.md** - Product Requirements Document
 2. **Implementation_Plan_template.md** - Build order and dependency tracking
 
-**Execution Documents** (in `/project_docs/` - provided to Kilo):
+**Execution Documents** (in `/Dev_Docs/` - provided to Kilo):
 3. **Schema_template.md** - Data structure examples
 4. **Naming_Standards_template.md** - Consistent naming conventions (pre-filled)
 5. **Function_Registry_template.md** - Prevent function duplication
@@ -69,10 +69,10 @@ Copy templates to your project directory:
 
 ```bash
 # Planning docs for you + AI Assistant
-cp -r docs/ my-new-project/docs/
+cp -r Planning_Docs/ my-new-project/Planning_Docs/
 
 # Execution docs for Kilo
-cp -r project_docs/ my-new-project/project_docs/
+cp -r Dev_Docs/ my-new-project/Dev_Docs/
 ```
 
 ### 3. Planning Phase (You + AI Assistant)
