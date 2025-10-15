@@ -157,7 +157,7 @@ Components are **features, not files**. Complexity dictates decomposition level.
 
 ## 🤝 Contributing
 
-This workflow emerged from tracking 49+ function duplication errors across multiple MVP development cycles. It represents real-world lessons learned.
+This workflow emerged from tracking over 149+ development errors across multiple MVP development cycles. It represents real-world lessons learned.
 
 **Contributions welcome for:**
 - Additional failure modes and solutions
@@ -177,8 +177,7 @@ MIT License - Use freely, modify as needed, share improvements.
 
 ## 🙏 Credits
 
-Developed through iterative refinement with AI assistants (Claude, Perplexity) as thought partners. Special recognition to the autistic pattern recognition that made tracking 49 duplication errors possible.
-
+Developed by ryan Connelly through iterative refinement.
 ---
 
 ## 🔗 Related Resources
