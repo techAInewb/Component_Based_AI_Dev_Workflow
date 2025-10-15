@@ -1,0 +1,16 @@
+# Project-specific files (don't commit filled templates)
+**/docs/
+!templates/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
