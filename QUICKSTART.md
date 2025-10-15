@@ -6,17 +6,17 @@
 
 1. **Copy templates to your project:**
    ```bash
-   mkdir my-project/docs
-   mkdir my-project/project_docs
-   cp docs/* my-project/docs/
-   cp project_docs/* my-project/project_docs/
+   mkdir my-project/Planning_Docs
+   mkdir my-project/Dev_Docs
+   cp Planning_Docs/* my-project/Planning_Docs/
+   cp Dev_Docs/* my-project/Dev_Docs/
    ```
 
 2. **Open your AI assistant** (Claude, ChatGPT, Perplexity, etc.)
 
 3. **Upload these files to your AI assistant:**
    - `AI_Component_Development_Workflow.md`
-   - All template files from `docs/` and `project_docs/`
+   - All template files from `Planning_Docs/` and `Dev_Docs/`
 
 4. **Start the conversation:**
    ```
